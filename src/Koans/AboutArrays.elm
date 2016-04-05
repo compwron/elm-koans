@@ -41,11 +41,11 @@ testSuite =
         (assertEqual (fromList [0, 3, 6]) (Array.map (\i -> i * 3) <| fromList [ 0, 1, 2 ]))
     , test
         "unlike with lists, you can get the value at an index"
-        (assertEqual (Just xNum) (Array.get 1 <| fromList [ 0, 1, 2 ]))
+        (assertEqual (Just 1) (Array.get 1 <| fromList [ 0, 1, 2 ]))
     , test
         "and set the value at an index"
-        (assertEqual (fromList xList) (Array.set 1 5 <| fromList [ 0, 1, 2 ]))
+        (assertEqual (fromList [0, 5, 2]) (Array.set 1 5 <| fromList [ 0, 1, 2 ]))
     , test
         "or get a slice of the array"
-        (assertEqual (fromList xList) (Array.slice 1 4 <| fromList [ 0, 1, 2, 3, 4 ]))
+        (assertEqual (fromList [1, 2, 3]) (Array.slice 1 4 <| fromList [ 0, 1, 2, 3, 4 ]))
     ]
